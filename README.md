@@ -16,5 +16,5 @@ bundle install
 rails s
 ```
 
-Try http://localhost:3000/api/v1/system/ping or http://localhost:3000/api/v2/protected/ping with username=*username* and password=*password*.
+Try http://localhost:3000/api/v1/system/ping or http://localhost:3000/api/v2/protected/ping with _username_ and _password_.
 

@@ -5,3 +5,11 @@
 require File.expand_path('../config/application', __FILE__)
 
 GrapeOnRails::Application.load_tasks
+
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = 'spec/**/*_spec.rb'
+end
+
+task :spec
+task :default => :spec

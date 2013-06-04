@@ -6,7 +6,7 @@ gem 'coffee-rails', '~> 4.0.0.rc1'
 gem 'sqlite3', '~> 1.3.7', :platforms => [ :ruby ]
 gem 'activerecord-jdbcsqlite3-adapter', "~> 1.2.9", :platforms => [ :jruby ]
 gem 'jquery-rails', '~> 3.0.0'
-gem 'grape', '~> 0.4.1'
+gem 'grape', :git => "https://github.com/intridea/grape.git"
 gem 'uglifier', '>= 1.0.3'
 
 group :development, :test do

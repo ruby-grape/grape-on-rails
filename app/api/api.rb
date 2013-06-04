@@ -3,4 +3,5 @@ class API < Grape::API
   mount Acme::Ping
   mount Acme::Raise
   mount Acme::Protected
+  mount Acme::Post
 end

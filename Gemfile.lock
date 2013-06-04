@@ -1,18 +1,3 @@
-GIT
-  remote: https://github.com/intridea/grape.git
-  revision: 1029e0fce76b2957b1a4c1a0c3a89897046ef3d8
-  specs:
-    grape (0.4.2)
-      activesupport
-      builder
-      hashie (>= 1.2.0)
-      multi_json (>= 1.3.2)
-      multi_xml (>= 0.5.2)
-      rack (>= 1.3.0)
-      rack-accept
-      rack-mount
-      virtus
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,6 +56,16 @@ GEM
       multi_json (~> 1.0)
     ffi (1.8.1)
     ffi (1.8.1-java)
+    grape (0.4.1)
+      activesupport
+      builder
+      hashie (>= 1.2.0)
+      multi_json (>= 1.3.2)
+      multi_xml (>= 0.5.2)
+      rack (>= 1.3.0)
+      rack-accept
+      rack-mount
+      virtus
     hashie (2.0.5)
     hike (1.2.2)
     i18n (0.6.4)
@@ -172,7 +167,7 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter (~> 1.2.9)
   capybara (~> 2.1.0)
   coffee-rails (~> 4.0.0.rc1)
-  grape!
+  grape (= 0.4.1)
   jquery-rails (~> 3.0.0)
   rails (= 4.0.0.rc1)
   rspec (~> 2.13.0)

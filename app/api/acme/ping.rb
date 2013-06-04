@@ -3,7 +3,7 @@ module Acme
     format :json
     desc "Returns pong."
     get :ping do
-      { :ping => "pong" }
+      { :ping => params[:pong] || 'pong' }
     end
   end
 end

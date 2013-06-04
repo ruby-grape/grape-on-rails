@@ -5,7 +5,11 @@ describe "Exceptions", :js => true, :type => :feature do
     visit "/api/raise"
   end
   it "displays 500 error page" do
-    title.should == "Action Controller: Exception caught"
+    if RUBY_PLATFORM == 'java'
+      title.should == "We're sorry, but something went wrong (500)"
+    else
+      title.should == "Action Controller: Exception caught"
+    end
   end
 end
 

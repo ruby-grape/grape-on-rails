@@ -11,4 +11,8 @@ RSpec::Core::RakeTask.new(:test) do |spec|
 end
 
 Rake::Task[:default].prerequisites.clear
-task :default => [:test]
+
+require 'rubocop/rake_task'
+Rubocop::RakeTask.new(:rubocop)
+
+task default: [:rubocop, :test]

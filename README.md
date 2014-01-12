@@ -10,6 +10,11 @@ A [Grape](http://github.com/intridea/grape) API mounted on Rails.
 * [raise](app/api/acme/raise.rb): raise an error, Rails handling exceptions
 * [protected](app/api/acme/protected.rb): API protected with rudimentary Basic Authentication
 
+See
+---
+
+An instance of this app is running on [grape-on-rails.herokuapp.com](http://grape-on-rails.herokuapp.com).
+
 Run
 ---
 

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'sqlite3', '~> 1.3.7', :platforms => [ :ruby ]
+gem 'pg'
 gem 'activerecord-jdbcsqlite3-adapter', '~> 1.2.9', :platforms => [ :jruby ]
 gem 'jquery-rails', '~> 3.0.0'
 gem 'grape', github: 'intridea/grape'

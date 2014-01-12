@@ -5,6 +5,6 @@ describe 'Homepage', js: true, type: :feature do
     visit '/'
   end
   it 'displays index.html page' do
-    page.find('#header h2').should have_content 'riding Ruby on Rails'
+    page.find('h1').should have_content 'Grape'
   end
 end

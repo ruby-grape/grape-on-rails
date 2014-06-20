@@ -5,6 +5,6 @@ describe 'Homepage', js: true, type: :feature do
     visit '/'
   end
   it 'displays index.html page' do
-    page.find('h1').should have_content 'Grape'
+    expect(page.find('h1')).to have_content 'Grape'
   end
 end

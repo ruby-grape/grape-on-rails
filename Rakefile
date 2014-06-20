@@ -14,7 +14,7 @@ if Rails.env.test? || Rails.env.development?
   Rake::Task[:default].prerequisites.clear
 
   require 'rubocop/rake_task'
-  Rubocop::RakeTask.new(:rubocop)
+  RuboCop::RakeTask.new(:rubocop)
 
   task default: [:rubocop, :test]
 end

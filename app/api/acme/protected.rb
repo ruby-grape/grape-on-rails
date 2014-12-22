@@ -1,10 +1,9 @@
 module Acme
   class Protected < Grape::API
-    format :json
-    http_basic do |username, password|
-      username == 'username' && password == 'password'
-    end
-    resource :protected do
+    namespace :protected do
+      http_basic do |username, password|
+        username == 'username' && password == 'password'
+      end
       desc 'Returns pong if username=username and password=password.'
       get :ping do
         { ping: 'pong' }

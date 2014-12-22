@@ -8,5 +8,4 @@ describe Acme::Post do
       expect(response.body).to eq({ 'reticulated' => reticulated }.to_json)
     end
   end
-
 end

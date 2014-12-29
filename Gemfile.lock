@@ -76,7 +76,7 @@ GEM
     ffi (1.9.6-java)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
-    grape (0.10.0)
+    grape (0.10.1)
       activesupport
       builder
       hashie (>= 2.1.0)
@@ -224,7 +224,7 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter (~> 1.2.9)
   capybara (~> 2.3.0)
   coffee-rails (~> 4.1.0)
-  grape (~> 0.10.0)
+  grape (~> 0.10.1)
   jquery-rails (~> 3.0.0)
   pg
   rails (~> 4.2.0)

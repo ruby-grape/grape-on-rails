@@ -1,7 +1,9 @@
 Grape on Rails
 ==============
 
-[![Build Status](https://secure.travis-ci.org/dblock/grape-on-rails.png)](http://travis-ci.org/dblock/grape-on-rails)
+[![Build Status](http://img.shields.io/travis/dblock/grape-on-rails.svg)](https://travis-ci.org/dblock/grape-on-rails)
+[![Dependency Status](https://gemnasium.com/dblock/grape-on-rails.svg)](https://gemnasium.com/dblock/grape-on-rails)
+[![Code Climate](https://codeclimate.com/github/dblock/grape-on-rails.svg)](https://codeclimate.com/github/dblock/grape-on-rails)
 
 A [Grape](http://github.com/intridea/grape) API mounted on Rails.
 

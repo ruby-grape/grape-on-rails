@@ -7,10 +7,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'pg'
 gem 'activerecord-jdbcsqlite3-adapter', '~> 1.2.9', platforms: [:jruby]
 gem 'jquery-rails', '~> 3.0.0'
-gem 'grape', '~> 0.11.0'
 gem 'uglifier', '>= 1.0.3'
 gem 'zip-zip', '~> 0.2'
-
+gem 'grape', '~> 0.9.0'
+gem 'grape-swagger-rails', github: 'BrandyMint/grape-swagger-rails'
 group :development, :test do
   gem 'rspec', '~> 3.1'
   gem 'rspec-rails', '~> 3.1'

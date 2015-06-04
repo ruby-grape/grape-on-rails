@@ -24,6 +24,9 @@ Run
 bundle install
 rails s
 ```
-
+For Documentation
+```
+http://localhost:3000/documentation
+```
 Try http://localhost:3000/api/ping or http://localhost:3000/api/protected/ping with _username_ and _password_.
 

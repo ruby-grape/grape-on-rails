@@ -1,7 +1,17 @@
 rvm:
   - 1.9.3
+  - 2.2
+  - 2.1
   - 2.0.0
-  - 2.1.0
+  - rbx-2.2.10
+  - jruby-19mode
+  - ruby-head
+  - jruby-head
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby-head
 
 before_script:
   - "cp config/database.travis.yml config/database.yml"

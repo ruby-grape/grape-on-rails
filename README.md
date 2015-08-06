@@ -1,11 +1,11 @@
 Grape on Rails
 ==============
 
-[![Build Status](http://img.shields.io/travis/dblock/grape-on-rails.svg)](https://travis-ci.org/dblock/grape-on-rails)
-[![Dependency Status](https://gemnasium.com/dblock/grape-on-rails.svg)](https://gemnasium.com/dblock/grape-on-rails)
-[![Code Climate](https://codeclimate.com/github/dblock/grape-on-rails.svg)](https://codeclimate.com/github/dblock/grape-on-rails)
+[![Build Status](https://travis-ci.org/ruby-grape/grape-on-rails.svg?branch=master)](https://travis-ci.org/ruby-grape/grape-on-rails)
+[![Dependency Status](https://gemnasium.com/ruby-grape/grape-on-rails.svg)](https://gemnasium.com/ruby-grape/grape-on-rails)
+[![Code Climate](https://codeclimate.com/github/ruby-grape/grape-on-rails.svg)](https://codeclimate.com/github/ruby-grape/grape-on-rails)
 
-A [Grape](http://github.com/intridea/grape) API mounted on Rails.
+A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.
 
 * [ping](app/api/acme/ping.rb): a hello world `GET` API
 * [post](app/api/acme/post.rb): post JSON data

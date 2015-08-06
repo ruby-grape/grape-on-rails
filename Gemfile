@@ -17,6 +17,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1'
   gem 'capybara', '~> 2.4.4'
   gem 'selenium-webdriver', '~> 2.46.0'
-  gem 'rubocop', '~> 0.32.1'
+  gem 'rubocop', '~> 0.33.0'
   gem 'nokogiri', '1.6.2.1'
 end

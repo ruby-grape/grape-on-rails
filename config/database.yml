@@ -1,7 +1,11 @@
 development:
   adapter: postgresql
   database: grape_on_rails_development
+  username: root
+  password: root
 
 test:
   adapter: postgresql
   database: grape_on_rails_test
+  username: root
+  password: root

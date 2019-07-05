@@ -8,6 +8,6 @@ api_reloader = ActiveSupport::FileUpdateChecker.new(api_files, api_dir => file_e
   Rails.application.reload_routes!
 end
 
-ActionDispatch::Reloader.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   api_reloader.execute_if_updated
 end

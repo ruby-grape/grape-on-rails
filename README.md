@@ -2,7 +2,6 @@ Grape on Rails
 ==============
 
 [![Build Status](https://travis-ci.org/ruby-grape/grape-on-rails.svg?branch=master)](https://travis-ci.org/ruby-grape/grape-on-rails)
-[![Dependency Status](https://gemnasium.com/ruby-grape/grape-on-rails.svg)](https://gemnasium.com/ruby-grape/grape-on-rails)
 [![Code Climate](https://codeclimate.com/github/ruby-grape/grape-on-rails.svg)](https://codeclimate.com/github/ruby-grape/grape-on-rails)
 
 A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.

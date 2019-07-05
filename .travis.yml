@@ -10,8 +10,10 @@ rvm:
 services:
   - xvfb
   - postgresql
-  
+
 before_script:
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+  - tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C bin
+  - export PATH=$(pwd)/bin:$PATH
   - "cp config/database.travis.yml config/database.yml"
   - "RAILS_ENV=test bundle exec rake db:create"
-

@@ -1,6 +1,5 @@
 #!/usr/bin/env rake
-
-require File.expand_path('../config/application', __FILE__)
+require File.expand_path('config/application', __dir__)
 
 GrapeOnRails::Application.load_tasks
 
@@ -12,5 +11,5 @@ if Rails.env.test? || Rails.env.development?
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop)
 
-  task default: [:rubocop, :spec]
+  task default: %i[rubocop spec]
 end

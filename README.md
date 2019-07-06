@@ -10,6 +10,7 @@ A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.
 * [post](app/api/acme/post.rb): post JSON data
 * [raise](app/api/acme/raise.rb): raise an error, Rails handling exceptions
 * [protected](app/api/acme/protected.rb): API protected with rudimentary Basic Authentication
+* [headers](app/api/acme/headers.rb): demonstrates header handling
 
 See
 ---

@@ -222,7 +222,7 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zip-zip (0.3)

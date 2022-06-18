@@ -1,0 +1,35 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://test:password@127.0.0.1:5432/grape_on_rails_test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1.2"
+          bundler-cache: true
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@latest
+        with:
+          firefox-version: "101.0"
+      - uses: browser-actions/setup-geckodriver@latest
+        with:
+          geckodriver-version: "0.31.0"
+      - name: Setup database configuration
+        run: cp config/database.gha.yml config/database.yml
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: "14"
+          postgresql db: grape_on_rails_test
+          postgresql user: test
+          postgresql password: password
+      - uses: GabrielBB/xvfb-action@v1
+        with:
+          run: |
+            bundle exec rake db:create
+            bundle exec rake spec

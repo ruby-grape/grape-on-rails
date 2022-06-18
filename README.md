@@ -1,7 +1,7 @@
 Grape on Rails
 ==============
 
-[![Build Status](https://travis-ci.org/ruby-grape/grape-on-rails.svg?branch=master)](https://travis-ci.org/ruby-grape/grape-on-rails)
+[![Test](https://github.com/ruby-grapy/grape-on-rails/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/ruby-grape/grape-on-rails/actions/workflows/test.yml)
 [![Code Climate](https://codeclimate.com/github/ruby-grape/grape-on-rails.svg)](https://codeclimate.com/github/ruby-grape/grape-on-rails)
 
 A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.

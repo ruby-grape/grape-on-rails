@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: grape_on_rails_test
+  url: <%= ENV["DATABASE_URL"] %>

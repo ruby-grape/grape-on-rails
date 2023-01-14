@@ -12,11 +12,6 @@ A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.
 * [protected](app/api/acme/protected.rb): API protected with rudimentary Basic Authentication
 * [headers](app/api/acme/headers.rb): demonstrates header handling
 
-See
----
-
-An instance of this app is running on [grape-on-rails.herokuapp.com](http://grape-on-rails.herokuapp.com).
-
 Run
 ---
 

@@ -29,3 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Appraisal gem
+.bundle
+/gemfiles/*.lock

@@ -8,9 +8,16 @@ Bundler.require(*Rails.groups)
 
 module GrapeOnRails
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
-
+    # Since we're testing against multiple versions, initialize configuration defaults
+    # based upon the version we're using.
+    rails_version = Gem::Version.new(Rails.version)
+    if rails_version >= Gem::Version.new('7.0')
+      config.load_defaults 7.0
+    elsif rails_version >= Gem::Version.new('6.1')
+      config.load_defaults 6.1
+    else
+      config.load_defaults 6.0
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

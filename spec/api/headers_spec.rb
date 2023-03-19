@@ -6,7 +6,8 @@ describe Acme::Headers do
     expect(JSON.parse(response.body)).to eq(
       'Accept' => 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
       'Cookie' => '',
-      'Host' => 'www.example.com'
+      'Host' => 'www.example.com',
+      'Version' => 'HTTP/1.0'
     )
   end
 
@@ -31,7 +32,8 @@ describe Acme::Headers do
       'Cookie' => '',
       'Host' => 'www.example.com',
       'Reticulated-Spline' => 42,
-      'Something' => 1
+      'Something' => 1,
+      'Version' => 'HTTP/1.0'
     )
   end
 end

@@ -68,6 +68,10 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    appraisal (2.4.1)
+      bundler
+      rake
+      thor (>= 0.14.0)
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.12.0)
@@ -90,28 +94,24 @@ GEM
       reline (>= 0.2.7)
     diff-lcs (1.5.0)
     digest (3.1.0)
-    dry-configurable (0.15.0)
+    dry-core (1.0.0)
       concurrent-ruby (~> 1.0)
-      dry-core (~> 0.6)
-    dry-container (0.9.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
       concurrent-ruby (~> 1.0)
-      dry-configurable (~> 0.13, >= 0.13.0)
-    dry-core (0.7.1)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
       concurrent-ruby (~> 1.0)
-    dry-inflector (0.2.1)
-    dry-logic (1.2.0)
-      concurrent-ruby (~> 1.0)
-      dry-core (~> 0.5, >= 0.5)
-    dry-types (1.5.1)
-      concurrent-ruby (~> 1.0)
-      dry-container (~> 0.3)
-      dry-core (~> 0.5, >= 0.5)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-logic (~> 1.0, >= 1.0.2)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
     erubi (1.10.0)
     globalid (1.0.1)
       activesupport (>= 5.0)
-    grape (1.6.2)
+    grape (1.7.0)
       activesupport
       builder
       dry-types (>= 1.1)
@@ -140,7 +140,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.17.0)
     msgpack (1.5.2)
-    mustermann (1.1.1)
+    mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mustermann-grape (1.0.2)
       mustermann (>= 1.0.0)
@@ -159,6 +159,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.10-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.10-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.10-x86_64-linux)
@@ -285,14 +287,16 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
+  appraisal
   bootsnap
   capybara
   debug
-  grape (~> 1.6, >= 1.6.2)
+  grape (~> 1.7)
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -308,9 +312,6 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
-
-RUBY VERSION
-   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.16

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
 gem 'grape', '~> 1.7'
+gem 'grape-swagger'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

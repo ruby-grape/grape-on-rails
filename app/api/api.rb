@@ -6,4 +6,5 @@ class API < Grape::API
   mount Acme::Protected
   mount Acme::Post
   mount Acme::Headers
+  add_swagger_documentation info: { title: 'grape-on-rails' }
 end

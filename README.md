@@ -19,4 +19,5 @@ bundle install
 rails s
 ```
 
-Try http://localhost:3000/api/ping or http://localhost:3000/api/protected/ping with _username_ and _password_.
+- Try http://localhost:3000/api/ping or http://localhost:3000/api/protected/ping with _username_ and _password_.
+- View Swagger docs at http://localhost:3000/swagger.

@@ -43,7 +43,7 @@ jobs:
           postgresql db: grape_on_rails_test
           postgresql user: test
           postgresql password: password
-      - uses: GabrielBB/xvfb-action@v1
+      - uses: coactions/setup-xvfb@v1
         with:
           run: |
             bundle exec rake db:create

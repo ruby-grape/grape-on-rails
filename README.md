@@ -16,6 +16,7 @@ A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.
 
 ```
 bin/setup
+rails s
 ```
 
 - Try http://localhost:3000/api/ping or http://localhost:3000/api/protected/ping with _username_ and _password_.

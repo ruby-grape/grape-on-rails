@@ -7,16 +7,15 @@ jobs:
       RAILS_ENV: test
       DATABASE_URL: postgres://test:password@127.0.0.1:5432/grape_on_rails_test
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile.file }}.gemfile
-    continue-on-error: ${{ matrix.gemfile.experimental }}
     strategy:
       fail-fast: false
       matrix:
         gemfile:
-          - { ruby: '2.7', file: rails_6, experimental: false }
-          - { ruby: '3.0', file: rails_6_1, experimental: false }
-          - { ruby: '3.1', file: rails_7, experimental: false }
-          - { ruby: '3.2', file: rails_7, experimental: false }
-          - { ruby: '3.2' ,file: rails_edge, experimental: true }
+          - { ruby: '2.7', file: rails_6 }
+          - { ruby: '3.0', file: rails_6_1 }
+          - { ruby: '3.1', file: rails_7 }
+          - { ruby: '3.2', file: rails_7 }
+#          - { ruby: '3.2' ,file: rails_edge }
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby

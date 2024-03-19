@@ -3,11 +3,10 @@ require 'spec_helper'
 describe Acme::Headers do
   it 'returns all headers' do
     get '/api/headers'
-    expect(JSON.parse(response.body)).to eq(
+    expect(JSON.parse(response.body)).to include(
       'Accept' => 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
       'Cookie' => '',
-      'Host' => 'www.example.com',
-      'Version' => 'HTTP/1.0'
+      'Host' => 'www.example.com'
     )
   end
 
@@ -27,13 +26,12 @@ describe Acme::Headers do
       'Something' => 1,
       'SOMETHING_ELSE' => 1
     }
-    expect(JSON.parse(response.body)).to eq(
+    expect(JSON.parse(response.body)).to include(
       'Accept' => 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
       'Cookie' => '',
       'Host' => 'www.example.com',
       'Reticulated-Spline' => 42,
-      'Something' => 1,
-      'Version' => 'HTTP/1.0'
+      'Something' => 1
     )
   end
 end

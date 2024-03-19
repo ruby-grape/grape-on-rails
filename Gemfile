@@ -72,7 +72,11 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'rubocop'
+  gem 'rubocop', '1.62.1'
+  gem 'rubocop-capybara'
+  gem 'rubocop-rails'
+  gem 'rubocop-rake'
+  gem 'rubocop-rspec'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

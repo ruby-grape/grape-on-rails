@@ -8,6 +8,7 @@ describe Acme::Protected do
       expect(response.body).to eq ''
     end
   end
+
   context 'with incorrect authorization' do
     it 'ping' do
       get '/api/protected/ping',
@@ -19,6 +20,7 @@ describe Acme::Protected do
       expect(response.body).to eq ''
     end
   end
+
   context 'with authorization' do
     it 'ping' do
       get '/api/protected/ping',

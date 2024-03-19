@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - vendor/**/*
     - bin/**/*
+  NewCops: enable
 
 Style/Documentation:
   Enabled: false
@@ -9,7 +10,13 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
   
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
   
+require:
+  - rubocop-capybara
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+
 inherit_from: .rubocop_todo.yml

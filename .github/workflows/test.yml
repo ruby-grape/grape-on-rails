@@ -15,6 +15,7 @@ jobs:
           - { ruby: '3.0', file: rails_6_1 }
           - { ruby: '3.1', file: rails_7 }
           - { ruby: '3.2', file: rails_7 }
+          - { ruby: '3.3', file: rails_7 }
 #          - { ruby: '3.2' ,file: rails_edge }
     steps:
       - uses: actions/checkout@v3

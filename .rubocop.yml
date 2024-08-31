@@ -16,6 +16,7 @@ Layout/LineLength:
 require:
   - rubocop-capybara
   - rubocop-rails
+  - rubocop-rspec_rails
   - rubocop-rake
   - rubocop-rspec
 

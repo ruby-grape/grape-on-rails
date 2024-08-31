@@ -3,12 +3,12 @@
 source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
-gem 'grape', '~> 1.7'
+gem 'grape', '~> 2.1'
 gem 'grape-swagger'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 6.4.2'
+gem 'puma'
 gem 'rails', git: 'https://github.com/rails/rails.git'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -33,6 +33,6 @@ group :test do
   gem 'rubocop-rails'
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
+  gem 'rubocop-rspec_rails'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end

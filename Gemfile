@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# https://stackoverflow.com/questions/79360526/uninitialized-constant-activesupportloggerthreadsafelevellogger-nameerror
+gem 'concurrent-ruby', '1.3.4'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8'
 
@@ -78,5 +81,5 @@ group :test do
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'rubocop-rspec_rails'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '4.20'
 end

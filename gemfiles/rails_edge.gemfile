@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
+gem 'concurrent-ruby', '1.3.4'
 gem 'grape', '~> 2.1'
 gem 'grape-swagger'
 gem 'importmap-rails'
@@ -34,5 +35,5 @@ group :test do
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'rubocop-rspec_rails'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '4.20'
 end

@@ -6,18 +6,15 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: postgres://test:password@127.0.0.1:5432/grape_on_rails_test
-      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile.file }}.gemfile
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.entry.gemfile }}.gemfile
     strategy:
       fail-fast: false
       matrix:
-        gemfile:
-          - { ruby: '2.7', file: rails_6 }
-          - { ruby: '3.0', file: rails_6_1 }
-          - { ruby: '3.1', file: rails_7 }
-          - { ruby: '3.2', file: rails_7 }
-          - { ruby: '3.3', file: rails_7 }
-          - { ruby: '3.4', file: rails_7 }
-#          - { ruby: '3.2' ,file: rails_edge }
+        entry:
+          - { ruby: '3.0', gemfile: rails_6_1 }
+          - { ruby: '3.2', gemfile: rails_7 }
+          - { ruby: '3.4', gemfile: rails_8 }
+#          - { ruby: '3.2', gemfile: rails_edge }
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
@@ -36,7 +33,7 @@ jobs:
         run: cp config/database.gha.yml config/database.yml
       - uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: "14"
+          postgresql version: "17"
           postgresql db: grape_on_rails_test
           postgresql user: test
           postgresql password: password

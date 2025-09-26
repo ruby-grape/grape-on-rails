@@ -90,4 +90,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Always preserve the full timezone rather than offset of the receiver.
+  config.active_support.to_time_preserves_timezone = :zone
 end

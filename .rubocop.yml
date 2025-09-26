@@ -13,7 +13,7 @@ Style/FrozenStringLiteralComment:
 Layout/LineLength:
   Enabled: false
   
-require:
+plugins:
   - rubocop-capybara
   - rubocop-rails
   - rubocop-rspec_rails

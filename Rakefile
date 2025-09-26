@@ -5,10 +5,14 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-if Rails.env.test? || Rails.env.development?
+if Rails.env.local?
   require 'rspec/core/rake_task'
 
   Rake::Task[:default].prerequisites.clear
+
+  RSpec::Core::RakeTask.new(:spec) do |spec|
+    spec.pattern = 'spec/**/*_spec.rb'
+  end
 
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop)

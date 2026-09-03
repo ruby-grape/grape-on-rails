@@ -6,6 +6,6 @@ describe 'Swagger', :js, type: :feature do
   end
 
   it 'displays Swagger page' do
-    expect(page.find('.title')).to have_content 'grape-on-rails'
+    expect(page.find('.title')).to have_text 'grape-on-rails'
   end
 end

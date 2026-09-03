@@ -6,6 +6,6 @@ describe 'Homepage', :js, type: :feature do
   end
 
   it 'displays index.html page' do
-    expect(page.find('h1')).to have_content 'Grape'
+    expect(page.find('h1')).to have_text 'Grape'
   end
 end

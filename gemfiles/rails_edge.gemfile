@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
 gem 'concurrent-ruby'
-gem 'grape', '~> 2.4'
+gem 'grape', '~> 3.3'
 gem 'grape-swagger'
 gem 'importmap-rails'
 gem 'jbuilder'

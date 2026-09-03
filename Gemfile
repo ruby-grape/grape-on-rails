@@ -82,4 +82,6 @@ group :test do
   gem 'rubocop-rspec'
   gem 'rubocop-rspec_rails'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
+  gem 'simplecov-lcov', require: false
 end

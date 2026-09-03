@@ -2,6 +2,7 @@
 
 [![Test](https://github.com/ruby-grape/grape-on-rails/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/ruby-grape/grape-on-rails/actions/workflows/test.yml)
 [![Rubocop](https://github.com/ruby-grape/grape-on-rails/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/ruby-grape/grape-on-rails/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ruby-grape/grape-on-rails/badge.svg?branch=master)](https://coveralls.io/github/ruby-grape/grape-on-rails?branch=master)
 
 A [Grape](http://github.com/ruby-grape/grape) API mounted on Rails.
 

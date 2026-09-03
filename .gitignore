@@ -33,3 +33,4 @@
 # Appraisal gem
 .bundle
 /gemfiles/*.lock
+/coverage

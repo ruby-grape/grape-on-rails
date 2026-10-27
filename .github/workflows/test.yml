@@ -1,60 +1,72 @@
 name: Tests
 on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://test:password@127.0.0.1:5432/grape_on_rails_test
+      DATABASE_URL: postgresql://test:password@127.0.0.1:5432/grape_on_rails_test
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.entry.gemfile }}.gemfile
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: grape_on_rails_test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U test -d grape_on_rails_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     strategy:
       fail-fast: false
       matrix:
         entry:
-          - { ruby: '3.0', gemfile: rails_6_1 }
-          - { ruby: '3.2', gemfile: rails_7 }
+          - { ruby: '3.3', gemfile: rails_6_1 }
+          - { ruby: '3.3', gemfile: rails_7 }
+          - { ruby: '3.4', gemfile: rails_8_0 }
           - { ruby: '3.4', gemfile: rails_8 }
-#          - { ruby: '3.2', gemfile: rails_edge }
+          - { ruby: '4.0', gemfile: rails_8 }
+    name: Ruby ${{ matrix.entry.ruby }} / ${{ matrix.entry.gemfile }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.entry.ruby }}
           bundler-cache: true
-      - name: Setup Firefox
-        uses: browser-actions/setup-firefox@latest
+      - uses: browser-actions/setup-firefox@v1
         with:
-          firefox-version: "134.0.1"
+          firefox-version: latest
       - uses: browser-actions/setup-geckodriver@latest
-        with:
-          geckodriver-version: "0.32.2"
-      - name: Setup database configuration
+      - name: Configure database
         run: cp config/database.gha.yml config/database.yml
-      - uses: harmon758/postgresql-action@v1
-        with:
-          postgresql version: "17"
-          postgresql db: grape_on_rails_test
-          postgresql user: test
-          postgresql password: password
-      - uses: coactions/setup-xvfb@v1
-        with:
-          run: |
-            bundle exec rake db:create
-            bundle exec rake spec
+      - name: Run tests
+        run: |
+          bundle exec rake db:create
+          xvfb-run -a bundle exec rake spec
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-${{ matrix.entry.ruby }}-${{ matrix.entry.gemfile }}
+          file: coverage/lcov.info
+          format: lcov
+          flag-name: ruby-${{ matrix.entry.ruby }}-${{ matrix.entry.gemfile }}
           parallel: true
-
   finish:
+    name: Finish Coveralls
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2
+      - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
